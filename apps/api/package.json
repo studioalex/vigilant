@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "@studioalex/viligant-api",
   "version": "0.1.0",
   "description": "API build on fastify, neo4j and graphql",
   "license": "UNLICENSED",

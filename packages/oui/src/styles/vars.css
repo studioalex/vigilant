@@ -1,0 +1,6 @@
+:root {
+  --oui-element-size--small: 360px;
+  --oui-element-size--medium: 540px;
+  --oui-element-size--large: 768px;
+  --oui-element-size--extralarge: 1024px;
+}

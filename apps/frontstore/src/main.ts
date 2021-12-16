@@ -1,9 +1,10 @@
 import { createApp, provide, h } from 'vue'
 import { ApolloClients } from '@vue/apollo-composable'
+import Oui from '@studioalex/oui'
 import { router } from './router'
 import { store } from './store'
 import { apolloClient } from './apollo'
-// import { i18n } from './i18n'
+import { i18n } from './i18n'
 import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 
@@ -18,6 +19,7 @@ import Toast from 'primevue/toast'
 import 'primevue/resources/themes/saga-blue/theme.css'
 import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'
+// import '@studioalex/oui/style.css'
 
 import './assets/fonts/Encode_Sans/EncodeSans/EncodeSans.css'
 import './css/style.css'
@@ -47,6 +49,7 @@ const app = createApp({
     },
     render: () => h(App),
   })
+  .use(Oui)
   .use(i18n)
   .use(router)
   .use(store)

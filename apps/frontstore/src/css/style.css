@@ -1,6 +1,6 @@
-@import "theme-vars.css";
-@import "theme-colors.css";
-@import "theme-box.css";
+/** @import "theme-vars.css";
+// @import "theme-colors.css";
+// @import "theme-box.css"; */
 @import "theme-style.css";
 @import "primevue.css";
 @import "normalize.css";

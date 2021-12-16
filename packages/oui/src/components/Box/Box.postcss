@@ -1,0 +1,65 @@
+.oui-box {
+  padding: 1rem;
+  margin: 1rem;
+  min-width: 320px;
+  max-width: 720px;
+  width: 100%;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+
+  &--oui {
+    color: var(--oui);
+    background-color: var(--oui);
+  }
+
+  &--surface-primary,
+  &--surface-1th {
+    background-color: var(--surface-primary);
+    color: var(--text-secondary);
+  }
+
+  &--surface-secondary,
+  &--surface-2th {
+    background-color: var(--surface-secondary);
+    color: var(--text-secondary);
+  }
+
+  &--surface-3th {
+    background-color: var(--surface-3th);
+    color: var(--text-primary);
+  }
+
+  &--surface-4th {
+    background-color: var(--surface-4th);
+    color: var(--text-primary);
+  }
+
+  &--shadow {
+    border: 1px solid hsl(var(--oui-hue) 10% 50% / 15%);
+    box-shadow: 0 1rem 0.5rem -0.5rem;
+    box-shadow: 0 2.8px 2.2px
+        hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+      0 6.7px 5.3px
+        hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),
+      0 12.5px 10px
+        hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+      0 22.3px 17.9px
+        hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+      0 41.8px 33.4px
+        hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+      0 100px 80px hsl(var(--surface-shadow) / var(--shadow-strength));
+  }
+
+  &--small {
+    max-width: var(--oui-element-size--small);
+  }
+
+  &--medium {
+    max-width: var(--oui-element-size--medium);
+  }
+
+  &--large {
+    max-width: var(--oui-element-size--large);
+  }
+}

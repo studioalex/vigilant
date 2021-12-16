@@ -9,6 +9,7 @@
 <template>
   <PageCenterLayout>
     <template #default>
+      <Oui-Box>content</Oui-Box>
       <div class="vl_box vl_box--small">
         <div class="vl_text--center">
           <IconLogo />
