@@ -8,21 +8,43 @@
 
 <template>
   <PageCenterLayout>
-    <template v-slot:default>
+    <template #default>
       <div class="vl_box vl_box--small">
-        <div class="vl_text--center"><IconLogo /></div>
-        <h1 class="vl_headline vl_text--center">{{ t('title') }}</h1>
+        <div class="vl_text--center">
+          <IconLogo />
+        </div>
+        <h1 class="vl_headline vl_text--center">
+          {{ t('title') }}
+        </h1>
         <ul class="vl_linklist">
-          <li><router-link :to="{ name: 'dashboard' }">Dashboard</router-link></li>
-          <li><router-link :to="{ name: 'about' }">About</router-link></li>
+          <li>
+            <router-link :to="{ name: 'dashboard' }">
+              Dashboard
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'about' }">
+              About
+            </router-link>
+          </li>
         </ul>
         <ul class="vl_linklist">
-          <li><router-link :to="{ name: 'signin' }">Sign In</router-link></li>
-          <li><router-link :to="{ name: 'signup' }">Sign Up</router-link></li>
+          <li>
+            <router-link :to="{ name: 'signin' }">
+              Sign In
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'signup' }">
+              Sign Up
+            </router-link>
+          </li>
         </ul>
       </div>
     </template>
-    <template v-slot:footer><PageFooter /></template>
+    <template #footer>
+      <PageFooter />
+    </template>
   </PageCenterLayout>
 </template>
 

@@ -1,6 +1,7 @@
 {
   "name": "frontstore",
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -27,7 +28,10 @@
     "@babel/core": "^7.0.0-0",
     "@intlify/vite-plugin-vue-i18n": "^3.2.1",
     "@types/node": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "@vitejs/plugin-vue": "^2.0.1",
+    "@vue/eslint-config-typescript": "^9.1.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "@vue/vue3-jest": "^27.0.0-alpha.4",
     "autoprefixer": "^10.4.0",

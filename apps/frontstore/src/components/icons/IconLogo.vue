@@ -3,7 +3,8 @@
     viewBox="0 0 656 600"
     fill="none"
     :class="classname"
-    xmlns="http://www.w3.org/2000/svg">
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <!-- eslint-disable -->
     <path d="M535.84 240L431.917 60L639.763 60L535.84 240Z" fill="#05EBFF"/>
     <path d="M327.84 600L223.917 420H431.763L327.84 600Z" fill="#20357C"/>

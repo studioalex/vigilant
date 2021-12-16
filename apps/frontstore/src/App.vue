@@ -5,7 +5,7 @@ import { useToast } from "primevue/usetoast"
 const store = useStore()
 const toast = useToast()
 
-store.subscribe((mutation, state) => {
+store.subscribe((mutation) => {
   if (mutation.type === 'setMessage') {
     const newMessages = store.getters.getNewToastMessages
 
@@ -25,5 +25,5 @@ store.subscribe((mutation, state) => {
 
 <template>
   <Toast />
-  <router-view></router-view>
+  <router-view />
 </template>

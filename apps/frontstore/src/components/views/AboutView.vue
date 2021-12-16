@@ -7,6 +7,9 @@ const router = useRouter()
 <template>
   <div>About</div>
   <div>
-    <Button label="home" @click="router.push({name: 'home'})"></Button>
+    <Button
+      label="home"
+      @click="router.push({name: 'home'})"
+    />
   </div>
 </template>

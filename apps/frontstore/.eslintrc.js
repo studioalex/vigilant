@@ -4,9 +4,13 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    jest: false
+    jest: true
   },
-  extends: [
-    'plugin:vue/vue3-strongly-recommended'
-  ]
+  plugins: [],
+  extends: [ 
+    'plugin:vue/vue3-strongly-recommended',
+    'eslint:recommended',
+    '@vue/typescript/recommended'
+  ],
+  rules: {}
 }

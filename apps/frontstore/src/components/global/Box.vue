@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { defineProps, toRefs, computed } from "vue"
+  import { defineProps, toRefs, computed, withDefaults } from "vue"
 
   interface Props {
     size?: string,
@@ -35,8 +35,10 @@
 </script>
 
 <template>
-  <div class="one-box"
-    :class="classProps">
-    <slot></slot>
+  <div
+    class="one-box"
+    :class="classProps"
+  >
+    <slot />
   </div>
 </template>
