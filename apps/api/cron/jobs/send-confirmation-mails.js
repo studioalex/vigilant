@@ -23,27 +23,27 @@ try {
           template: 'confirm-email',
           templateVars: {
             emailAddress: email,
-            confirmLink: config.VL_MAIL_LINK_CONFIRM,
+            confirmLink: config.VL_MAIL_LINK_CONFIRM
           }
         })
-        // set confirmmail tag
+        // Set confirmmail tag
         tx
           .run(
-            'MATCH (a:Account {email: $person_email}) SET a.confirmmail = true RETURN a',
-            { person_email: email }
+            'MATCH (a:Account {email: $personEmail}) SET a.confirmmail = true RETURN a',
+            {personEmail: email}
           )
           .then(
             result => {
               if (result.summary.counters.updates().propertiesSet === 1) {
-                logger.info({ message: 'confirmation mail send', email })
+                logger.info({message: 'confirmation mail send', email})
               }
             }
           )
-        }
+      }
       )
     )
   )
-}  catch (executionError) {
+} catch (executionError) {
   logger.error(executionError)
 } finally {
   await session.close()

@@ -5,14 +5,14 @@ import {logger} from '../logger.js'
 const session = driver.session()
 
 try {
-  const affected_tokens = await session.writeTransaction(async tx => {
+  const affectedTokens = await session.writeTransaction(async tx => {
     const result = await tx.run(
-      'MATCH (t:Singtoken) WHERE t.created < DateTime() - duration({hours: $token_expire}) DETACH DELETE t RETURN COUNT(t) AS affected',
-      { token_expire: config.VL_NEO4J_TOKEN_HOURS_EXPIRE }
+      'MATCH (t:Singtoken) WHERE t.created < DateTime() - duration({hours: $tokenExpire}) DETACH DELETE t RETURN COUNT(t) AS affected',
+      {tokenExpire: config.VL_NEO4J_TOKEN_HOURS_EXPIRE}
     )
     return result.records.map(record => record.get('affected').toNumber())
   })
-  logger.info({message: 'Delete outdated tokens', count:  affected_tokens[0]})
+  logger.info({message: 'Delete outdated tokens', count: affectedTokens[0]})
 } catch (executionError) {
   logger.error(executionError)
 } finally {

@@ -1,7 +1,7 @@
-import nodemailer from 'nodemailer'
 import fs from 'node:fs'
 import path from 'node:path'
 import url from 'node:url'
+import nodemailer from 'nodemailer'
 import ejs from 'ejs'
 import juice from 'juice'
 import {htmlToText} from 'html-to-text'
@@ -11,7 +11,7 @@ const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 /**
- * 
+ *
  */
 const smtp = nodemailer.createTransport({
   host: config.VL_MAIL_SMTP,
@@ -24,16 +24,16 @@ const smtp = nodemailer.createTransport({
 })
 
 /**
- * 
- * @param {*} param0 
- * @returns 
+ *
+ * @param {*} param0
+ * @returns
  */
-export async function sendmail ({template: templateName, templateVars, ...restOfOptions}) {
+export async function sendmail({template: templateName, templateVars, ...restOfOptions}) {
   const templatePath = path.join(__dirname, 'mailtemplates', `${templateName}.html`)
   const options = {...restOfOptions}
 
   if (templateName && fs.existsSync(templatePath)) {
-    const template = fs.readFileSync(templatePath, "utf-8")
+    const template = fs.readFileSync(templatePath, 'utf-8')
     const html = ejs.render(template, templateVars)
     const text = htmlToText(html)
     const htmlWithStylesInlined = juice(html)
@@ -43,4 +43,4 @@ export async function sendmail ({template: templateName, templateVars, ...restOf
   }
 
   return smtp.sendMail(options)
-};
+}

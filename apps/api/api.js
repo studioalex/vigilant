@@ -21,14 +21,14 @@ export async function api(fastify, appOptions) {
   // those should be support plugins that are reused
   // through your application
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'api', 'plugins'),
+    dir: path.join(__dirname, 'lib', 'plugins'),
     options: {...appOptions}
   })
 
   // This loads all plugins defined in routes
   // define your routes in one of these
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'api', 'routes'),
+    dir: path.join(__dirname, 'lib', 'routes'),
     ignorePattern: /.*(test|spec|helper).js/,
     options: {...appOptions}
   })

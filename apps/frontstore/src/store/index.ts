@@ -1,6 +1,5 @@
-import { InjectionKey } from 'vue'
 import { createStore, Store } from 'vuex'
-import { v4 as uuidv4 } from 'uuid'
+import { nanoid } from 'nanoid';
 
 // define your typings for the store state
 interface Message {
@@ -43,7 +42,7 @@ export const store = createStore<State>({
     setMessage (state, newmessage: Message) {
       const {type, message, title, description, toast} = newmessage
       const messageItem: Message = {
-        id: uuidv4(),
+        id: nanoid(),
         timestamp: Date.now(),
         type: type?.toLowerCase(),
         viewed: false,

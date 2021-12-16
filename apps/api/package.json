@@ -1,7 +1,7 @@
 {
-  "name": "violet-api",
-  "version": "1.0.0",
-  "description": "Violet API",
+  "name": "api",
+  "version": "0.1.0",
+  "description": "API build on fastify, neo4j and graphql",
   "main": "index.js",
   "type": "module",
   "engines": {
@@ -15,7 +15,8 @@
     "lint": "xo",
     "test": "tap lib/**/*.test.js | tnyan",
     "test:detail": "tap lib/**/*.test.js",
-    "test:report": "tap lib/**/*.test.js  --coverage-report=html"
+    "test:report": "tap lib/**/*.test.js  --coverage-report=html",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "keywords": [
     "api",
@@ -23,8 +24,8 @@
     "fastify",
     "neo4j"
   ],
-  "author": "Alexander Vu",
-  "license": "ISC",
+  "author": "Alexander Vu <alexander.vu.tuyet@gmail.com>",
+  "private": true,
   "dependencies": {
     "@graphql-tools/merge": "^8.2.1",
     "@ladjs/graceful": "^1.1.2",
