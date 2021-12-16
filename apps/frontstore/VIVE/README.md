@@ -1,0 +1,12 @@
+vaincre
+vaillante
+vague
+vape
+vaste
+vernir
+versatile
+vigne
+visnage
+vivant 
+vitre
+vive

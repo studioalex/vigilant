@@ -1,0 +1,16 @@
+@import "theme-vars.css";
+@import "theme-colors.css";
+@import "theme-box.css";
+@import "theme-style.css";
+@import "primevue.css";
+@import "normalize.css";
+@import "main.css";
+@import "layout.postcss";
+@import "pagelayout.postcss";
+@import "form.postcss";
+@import "wip.postcss";
+
+#app {
+  width: 100%;
+  height: 100%;
+}

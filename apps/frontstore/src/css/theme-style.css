@@ -1,0 +1,22 @@
+html {
+  block-size: 100%;
+  background-color: var(--surface-primary);
+  color: var(--text-primary);
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  font-family: EncodeSans;
+  font-size: 1rem;
+  min-width: 360px;
+}
+
+a {
+  color: lime;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

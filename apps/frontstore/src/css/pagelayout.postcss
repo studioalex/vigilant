@@ -1,0 +1,40 @@
+.vl_page {
+  &-footer {
+    margin: var(--page-margin);
+    text-align: center;
+    font-size: var(--font-size--medium);
+  }
+  &-center {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+    background-color: var(--page-background-color);
+    background-image: var(--page-background-image);
+    &__header {
+      order: 0;
+      flex: 0 1 auto;
+      align-self: auto;
+    }
+    &__body {
+      order: 1;
+      flex: 1 1 auto;
+      align-self: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-content: stretch;
+      align-items: center;
+    }
+    &__footer {
+      order: 2;
+      flex: 0 1 auto;
+      align-self: auto;
+    }
+  }
+}

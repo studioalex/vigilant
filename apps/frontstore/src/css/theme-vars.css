@@ -1,0 +1,6 @@
+:root {
+  --element-size--small: 360px;
+  --element-size--medium: 540px;
+  --element-size--large: 768px;
+  --element-size--extralarge: 1024px;
+}
