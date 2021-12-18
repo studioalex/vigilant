@@ -2,6 +2,8 @@
   "name": "@studioalex/oui",
   "version": "0.1.0",
   "description": "A lightweight Vue 3 component library",
+  "author": "Alexander Vu <alexander.vu.tuyet@gmail.com>",
+  "license": "UNLICENSED",
   "files": [
     "dist/oui.es.js",
     "dist/style.css",
@@ -34,8 +36,6 @@
     "ui",
     "oui"
   ],
-  "author": "Alexander Vu <alexander.vu.tuyet@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",

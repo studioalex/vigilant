@@ -1,6 +1,8 @@
 {
   "name": "@studioalex/viligant-frontstore",
   "version": "0.1.0",
+  "description": "Vue 3 Frontend",
+  "author": "Alexander Vu <alexander.vu.tuyet@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
