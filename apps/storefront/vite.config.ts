@@ -20,7 +20,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        ambassador: resolve(__dirname, 'bridge/index.html')
+        bridge: resolve(__dirname, 'bridge/index.html')
       }
     }
   }

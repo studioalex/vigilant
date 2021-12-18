@@ -5,7 +5,6 @@ import { router } from './router'
 import { store } from './store'
 import { apolloClient } from './apollo'
 import { i18n } from './i18n'
-import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 
 import PrimeVue from 'primevue/config'
@@ -23,23 +22,6 @@ import 'primeicons/primeicons.css'
 
 import './assets/fonts/Encode_Sans/EncodeSans/EncodeSans.css'
 import './css/style.css'
-
-/**
- * The i18n resources in the path specified in the plugin `include` option can be read
- * as vue-i18n optimized locale messages using the import syntax
- */
-import en from './locales/en.json'
-import cz from './locales/cz.json'
-import de from './locales/de.json'
-
-export const i18n = createI18n({
-  locale: 'en',
-  messages: {
-    en,
-    cz,
-    de
-  }
-})
 
 const app = createApp({
     setup () {

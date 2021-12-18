@@ -7,7 +7,7 @@ import en from './locales/en.json'
 import cz from './locales/cz.json'
 import de from './locales/de.json'
 
-export const i18n = createI18n({
+const i18n = createI18n({
   legacy: false, // you must set `false`, to use Composition API
   locale: 'en',
   fallbackLocale: 'en',
@@ -17,3 +17,5 @@ export const i18n = createI18n({
     de
   }
 })
+
+export { i18n }
