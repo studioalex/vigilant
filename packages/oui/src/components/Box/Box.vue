@@ -17,7 +17,6 @@
   })
 
   const { size, shadow, surface } = toRefs(props)
-
   const classProps = computed(() => {
     const result = ['oui-box']
 
@@ -38,7 +37,7 @@
 </script>
 
 <template>
-  <div :class="classProps">
+  <div :className="classProps">
     <slot />
   </div>
 </template>

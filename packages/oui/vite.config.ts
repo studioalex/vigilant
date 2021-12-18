@@ -32,10 +32,5 @@ export default defineConfig({
         exports: 'named'
       }
     }
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
   }
 })
