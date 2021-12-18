@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: |
-          yarn install --frozen-lockfile
-          yarn run --if-present lint
-          yarn run --if-present test
+          npm ci
+          npm run lint --if-present
+          npm run test --if-present
+          npm run build --if-present
