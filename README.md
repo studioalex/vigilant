@@ -15,6 +15,7 @@ This Turborepo includes the following packages and apps:
 **Packages**
 
 * oui: OUI (One UI) a lightweight [Vue](https://v3.vuejs.org) 3 component library [(more)](packages/oui/README.md)
+* oui: Documentation of the component UI by [VitePress](https://vitepress.vuejs.org) [(UI Documentation)]()
 
 **Utilities**
 
@@ -43,6 +44,7 @@ Technologies used in the project.
 * [Jest](https://jestjs.io/) test runner for frontend applications
 * [AVA](https://github.com/avajs/ava) test runner for NodeJS applications
 * [Prettier](https://prettier.io/) for code formatting
+* [VitePress](https://vitepress.vuejs.org) for documentation
 
 
 

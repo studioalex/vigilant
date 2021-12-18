@@ -2,8 +2,14 @@ import bcrypt from 'bcrypt'
 import {SignJWT, jwtVerify, importPKCS8, importSPKI} from 'jose'
 import {config} from '../../config.js'
 
-const ecPrivateKey = await importPKCS8(config.VL_JWT_KEY_PRIVATE, 'ES256')
-const ecPublicKey = await importSPKI(config.VL_JWT_KEY_PUBLIC, 'ES256')
+async function getCertificateKeys() {
+  const result = {
+    ecPrivateKey: await importPKCS8(config.VL_JWT_KEY_PRIVATE, 'ES256'),
+    ecPublicKey: await importSPKI(config.VL_JWT_KEY_PUBLIC, 'ES256')
+  }
+
+  return result
+}
 
 /**
  * Hash a plain password to be stores in a save way.
@@ -44,13 +50,15 @@ export async function createJWT(payload) {
     throw new TypeError('CreateJWT method expect the payload parameter should be an object.')
   }
 
+  const keys = await getCertificateKeys()
+
   return new SignJWT(payload)
     .setProtectedHeader({alg: config.VL_JWT_ALG})
     .setIssuedAt()
     .setIssuer(config.VL_JWT_ISSUER)
     .setAudience(config.VL_JWT_AUDIENCE)
     .setExpirationTime(config.VL_JWT_EXPIRATIONTIME)
-    .sign(ecPrivateKey)
+    .sign(keys.ecPrivateKey)
 }
 
 /**
@@ -59,7 +67,9 @@ export async function createJWT(payload) {
  * @returns {Promise<object>} Contain the payload and the protectedHeader.
  */
 export async function decodeJWT(token) {
-  return jwtVerify(token, ecPublicKey, {
+  const keys = await getCertificateKeys()
+
+  return jwtVerify(token, keys.ecPublicKey, {
     issuer: config.VL_JWT_ISSUER,
     audience: config.VL_JWT_AUDIENCE
   })
