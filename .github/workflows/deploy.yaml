@@ -45,4 +45,3 @@ jobs:
           heroku_app_name: "vigilant-api-staging"
           heroku_email: "alexander.vu.tuyet@gmail.com"
           buildpack: "https://github.com/lstoll/heroku-buildpack-monorepo"
-          appdir: "apps/api"
