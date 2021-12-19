@@ -8,14 +8,14 @@ This Turborepo includes the following packages and apps:
 
 **Apps**
 
-* api: an [Fastify](https://www.fastify.io) server with [GraphQL](https://graphql.org) and [Neo4j](https://neo4j.com) [(more)](apps/api/README.md)
+* api: an [Fastify](https://www.fastify.io) server with [GraphQL](https://graphql.org) and [Neo4j](https://neo4j.com) [(more)](apps/api/README.md) 
 * admin: a [Vite](https://vitejs.dev) / [Vue](https://v3.vuejs.org) app for administration [(more)](apps/admin/README.md)
-* storefront: a [Vite](https://vitejs.dev) / [Vue](https://vuejs.org) app [(more)](apps/storefront/README.md)
+* storefront: a [Vite](https://vitejs.dev) / [Vue](https://vuejs.org) app [(more)](apps/storefront/README.md) <a href="https://vigilant.studioalex.one"><img src="https://img.shields.io/badge/StudioAlex%20vigilant-green.svg"/></a>
 
 **Packages**
 
 * oui: OUI (One UI) a lightweight [Vue](https://v3.vuejs.org) 3 component library [(more)](packages/oui/README.md)
-* oui: Documentation of the component UI by [VitePress](https://vitepress.vuejs.org) [(UI Documentation)]()
+* oui: Documentation of the component UI by [VitePress](https://vitepress.vuejs.org) [(UI Documentation)]() <a href="https://oui.studioalex.one"><img src="https://img.shields.io/badge/StudioAlex%20OUI-green.svg"/></a>
 
 **Utilities**
 
