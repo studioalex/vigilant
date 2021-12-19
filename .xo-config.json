@@ -1,0 +1,11 @@
+{
+  "space": 2,
+  "semicolon": false,
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "import/no-unassigned-import": 0
+  }
+}

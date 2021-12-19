@@ -1,0 +1,36 @@
+type User @auth(rules: [{ isAuthenticated: true }]) {
+  uid: ID! @id(autogenerate: true)
+  firstname: String
+  middlenames: String
+  lastname: String
+  birthday: DateTime
+  accounts: [Account] @relationship(type: "IS_USER", direction: IN)
+  createdAt: DateTime! @timestamp(operations: [CREATE])
+}
+
+type Account @auth(rules: [{ isAuthenticated: true }]) {
+  email: String!
+  password: String!
+  active: Boolean
+  validated: Boolean @default(value: false)
+  confirmmail: Boolean @default(value: false)
+  created: DateTime @timestamp(operations: [CREATE])
+  user: User! @relationship(type: "IS_USER", direction: OUT)
+}
+
+type Token @auth(rules: [{ isAuthenticated: true }]) {
+  token: String!
+  created: DateTime! @timestamp(operations: [CREATE])
+  user: User! @relationship(type: "IS_USER", direction: OUT)
+}
+
+type Mutation {
+  signUp(email: String!, password: String!): String! ### JWT
+  signIn(email: String!, password: String!): String! ### JWT
+  sendToken(email: String!): Boolean! ### Boolean
+  singInToken(token: String!): String! ### JWT
+}
+
+type Query {
+  me: User @cypher(statement: "MATCH (u:User { uid: $auth.jwt.sub }) RETURN u")
+}
