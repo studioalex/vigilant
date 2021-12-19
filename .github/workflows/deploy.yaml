@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
-      - name: 💿 Setup node
+      - name: Setup node 💿
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
@@ -24,6 +24,11 @@ jobs:
           npm run lint --if-present
           npm run test --if-present
           npm run build --if-present
+      - name: Create api-stage branch 📦
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: api-stage
+          folder: apps/api
       - name: Deploy StoreFront to Netlify 🚀
         uses: nwtgck/actions-netlify@v1.2
         with:
@@ -38,8 +43,17 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_STOREFRONT_SITE_ID }}
         timeout-minutes: 1
-      - name: Create api-stage branch 📦
-        uses: JamesIves/github-pages-deploy-action@4.1.8
+      - name: Deploy OUI Documentation to Netlify 🚀
+        uses: nwtgck/actions-netlify@v1.2
         with:
-          branch: api-stage
-          folder: apps/api
+          publish-dir: "./packages/oui/docs/.vitepress/dist"
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_OUIDOCS_SITE_ID }}
+        timeout-minutes: 1
