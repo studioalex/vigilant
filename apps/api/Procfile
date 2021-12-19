@@ -1,1 +1,1 @@
-web: npm run start -w /apps/api
+web: npm run start
