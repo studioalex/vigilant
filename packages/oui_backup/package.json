@@ -25,15 +25,15 @@
   "jsdelivr": "./dist/oui.umd.js",
   "scripts": {
     "lib:build": "vite build",
-    "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
+    "dev": "vitepress dev docs",
     "build": "vite build && vitepress build docs",
     "lint": "eslint --ext .js,.vue src",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "analyze": "vite build --config analyze.config.js",
     "publish": "npm publish --access public",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf packages/oui/docs/.vitepress/dist"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf packages/oui/docs/.vitepress/dist && rm -rf stats.html"
   },
   "keywords": [
     "vue",
