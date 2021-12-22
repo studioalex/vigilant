@@ -1,0 +1,3 @@
+[submodule "packages/oui"]
+	path = packages/oui
+	url = https://github.com/studioalex/oui
