@@ -1,5 +1,0 @@
----
-title: Variables
----
-
-# OUI Variables
