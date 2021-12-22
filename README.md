@@ -46,5 +46,66 @@ Technologies used in the project.
 * [Prettier](https://prettier.io/) for code formatting
 * [VitePress](https://vitepress.vuejs.org) for documentation
 
+## OUI Package a Git Submodule
 
+To unleash the full power of a monorepo we implement the OUI package as a git submodule.
+Here are the commands you need for installtion and some help to handle git submodules.
 
+In order to add a Git submodule, use the “git submodule add” command and specify the URL of the Git remote repository to be included as a submodule.
+
+### Add submodule
+
+```bash
+$ git submodule add <remote_url> <destination_folder>
+```
+
+### Inital pull of submodule
+To pull a Git submodule, use the “git submodule update” command with the “–init” and the “–recursive” options.
+
+```bash
+$ git submodule update --init --recursive
+```
+
+### Update exiting submodule
+
+In order to update an existing Git submodule, you need to execute the “git submodule update” with the “–remote” and the “–merge” option.
+
+```bash
+$ git submodule update --remote --merge
+```
+
+### Fetch from submodule
+
+To fetch new commits done in the submodule repository, head into your submodule folder and run the “git fetch” command first (you will get the new submodule commits)
+
+```bash
+$ cd repository/submodule 
+
+$ git fetch
+```
+
+Now, if you run the “git log” command again, you will be able to see the new commits you are looking to integrate.
+
+```bash
+$ git log --oneline origin/master -3
+
+93360a2 (origin/master, origin/HEAD) Second commit
+88db523 First commit
+43d0813 (HEAD -> master) Initial commit
+```
+
+Now, in order for your submodule to be in-line with the newest commits, you can run the “git checkout” command and specify the SHA that you want to update your submodule to (in this case 93360a2)
+
+```bash
+$ git checkout -q 93360a2
+```
+
+### Remove Git submodules
+
+In order to remove a Git submodule from your repository, use the “git submodule deinit” command followed by the “git rm” command and specify the name of the submodule folder.
+
+```bash
+$ git submodule deinit <submodule>
+
+$ git rm <submodule>
+```
