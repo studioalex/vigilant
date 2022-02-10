@@ -34,5 +34,6 @@
   "bugs": {
     "url": "https://github.com/studioalex/vigilant/issues"
   },
-  "homepage": "https://github.com/studioalex/vigilant#readme"
+  "homepage": "https://github.com/studioalex/vigilant#readme",
+  "packageManager": "npm@8.1.0"
 }
