@@ -34,33 +34,5 @@
   "bugs": {
     "url": "https://github.com/studioalex/vigilant/issues"
   },
-  "homepage": "https://github.com/studioalex/vigilant#readme",
-  "turbo": {
-    "pipeline": {
-      "build": {
-        "outputs": [
-          "dist/**"
-        ],
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "test": {
-        "outputs": [
-          "coverage/**",
-          ".nyc_output/**"
-        ],
-        "dependsOn": []
-      },
-      "lint": {
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      },
-      "clean": {
-        "outputs": []
-      }
-    }
-  }
+  "homepage": "https://github.com/studioalex/vigilant#readme"
 }
