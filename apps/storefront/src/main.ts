@@ -24,13 +24,13 @@ import './assets/fonts/Encode_Sans/EncodeSans/EncodeSans.css'
 import './css/style.css'
 
 const app = createApp({
-    setup () {
-      provide(ApolloClients, {
-        default: apolloClient,
-      })
-    },
-    render: () => h(App),
-  })
+  setup() {
+    provide(ApolloClients, {
+      default: apolloClient,
+    })
+  },
+  render: () => h(App),
+})
   .use(Oui)
   .use(i18n)
   .use(router)

@@ -4,14 +4,14 @@ import url from 'node:url'
 import nodemailer from 'nodemailer'
 import ejs from 'ejs'
 import juice from 'juice'
-import {htmlToText} from 'html-to-text'
-import {config} from '../config.js'
+import { htmlToText } from 'html-to-text'
+import { config } from '../config.js'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 /**
- *
+ * Create SMTP Transport layer
  */
 const smtp = nodemailer.createTransport({
   host: config.VL_MAIL_SMTP,
@@ -28,9 +28,9 @@ const smtp = nodemailer.createTransport({
  * @param {*} param0
  * @returns
  */
-export async function sendmail({template: templateName, templateVars, ...restOfOptions}) {
+export async function sendmail({ template: templateName, templateVars, ...restOfOptions }) {
   const templatePath = path.join(__dirname, 'mailtemplates', `${templateName}.html`)
-  const options = {...restOfOptions}
+  const options = { ...restOfOptions }
 
   if (templateName && fs.existsSync(templatePath)) {
     const template = fs.readFileSync(templatePath, 'utf-8')
